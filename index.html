@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>💘 Valentine</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .messages {
+      min-height: 120px;
+      margin-bottom: 20px;
+    }
+
+    .messages p {
+      color: white;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .big-yes {
+      transform: scale(2.5);
+    }
+
+    .final-message {
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-question">
+    Draga mea iubitica, <br> u wanna be my valentine? 💖
+  </h1>
+
+  <div class="messages" id="messages"></div>
+
+  <div class="buttons" id="buttons">
+    <button id="yes">DA</button>
+    <button id="no">NU</button>
+  </div>
+
+  <script>
+    let noCount = 0;
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const messagesDiv = document.getElementById("messages");
+    const buttonsDiv = document.getElementById("buttons");
+    const mainQuestion = document.getElementById("main-question");
+
+    noBtn.addEventListener("click", () => {
+      noCount++;
+
+      if (noCount === 1) {
+        addMessage("Ești sigură?");
+      } 
+      else if (noCount === 2) {
+        addMessage("Mai gândește-te...");
+      } 
+      else if (noCount === 3) {
+        addMessage("Okey bine nu mai insist (glumesccc hahahaha 😜)");
+
+        setTimeout(() => {
+          yesBtn.classList.add("big-yes");
+          noBtn.style.display = "none";
+        }, 5000);
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <div class="final-message">
+          YEYYYYYY 💖💖💖 <br>
+          TE IUBESCCCCC MULTTTT!!!
+        </div>
+      `;
+    });
+
+    function addMessage(text) {
+      const p = document.createElement("p");
+      p.textContent = text;
+      messagesDiv.appendChild(p);
+    }
+  </script>
+
+</body>
+  <body>
+
+<iframe
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/XYb1mdGu5aQ?autoplay=1&loop=1&playlist=XYb1mdGu5aQ"
+  frameborder="0"
+  allow="autoplay; encrypted-media">
+</iframe>
+
+<h1 id="main-question">...
+</html>
